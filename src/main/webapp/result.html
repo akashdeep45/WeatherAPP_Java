@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Weather Details</title>
+    <link rel="stylesheet" href="jsp-style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Details</h1>
+
+        <div class="weather-image-container">
+            <img id="weather-icon" src="images/img1.png" alt="Weather Image">
+            <div class="temp-city">
+                <h2><i class="fas fa-map-marker-alt"></i> ${city}</h2>
+                <h2><i class="fas fa-thermometer-half"></i> ${temperature}&deg;C</h2>
+            </div>
+        </div>
+
+        <div class="weather-info">
+            <p>
+                <i class="fas fa-calendar-alt"></i> Date: ${date}
+            </p>
+            <p>
+                <i class="fas fa-clock"></i> Local Time: ${currentTime}
+            </p>
+            <p>
+                <i class="fas fa-cloud-sun"></i> Weather: ${weatherCondition}
+            </p>
+            <p>
+                <i class="fas fa-eye"></i> Visibility: ${visibility} km
+            </p>
+            <p>
+                <i class="fas fa-wind"></i> Wind Speed: ${windSpeed} km/h
+            </p>
+            <p>
+                <i class="fas fa-cloud"></i> Cloud Cover: ${cloudCover}%
+            </p>
+        </div>
+
+        <form id="weatherForm" action="/weather" method="get">
+            <input type="text" id="city" name="city" placeholder="Enter city name (e.g., London, Tokyo, New York)">
+            <button type="submit">Get Weather</button>
+            <p id="errorMsg" style="color: red; display: none;">Please enter the name of the place.</p>
+        </form>
+
+        <footer>
+            <div class="footer-container">
+                <p>JAVA Web Project</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
